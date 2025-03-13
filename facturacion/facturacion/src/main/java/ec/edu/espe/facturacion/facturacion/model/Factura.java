@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "facturas")
 public class Factura {
 
     @Id
@@ -19,54 +19,70 @@ public class Factura {
     private BigDecimal iva;
     private BigDecimal total;
 
-    
+    public Factura() {
 
+    }
 
     public Integer getCodFactura() {
         return codFactura;
     }
+
     public void setCodFactura(Integer codFactura) {
         this.codFactura = codFactura;
     }
+
     public String getTipoIdentificacion() {
         return tipoIdentificacion;
     }
+
     public void setTipoIdentificacion(String tipoIdentificacion) {
         this.tipoIdentificacion = tipoIdentificacion;
     }
+
     public String getIdentificacion() {
         return identificacion;
     }
+
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public LocalDateTime getFecha() {
         return fecha;
     }
+
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+
     public BigDecimal getSubtotal() {
         return subtotal;
     }
+
     public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
     }
+
     public BigDecimal getIva() {
         return iva;
     }
+
     public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
+
     public BigDecimal getTotal() {
         return total;
     }
+
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
@@ -78,6 +94,7 @@ public class Factura {
         result = prime * result + ((codFactura == null) ? 0 : codFactura.hashCode());
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -101,8 +118,5 @@ public class Factura {
                 + identificacion + ", nombre=" + nombre + ", fecha=" + fecha + ", subtotal=" + subtotal + ", iva=" + iva
                 + ", total=" + total + "]";
     }
-
-    
-
 
 }

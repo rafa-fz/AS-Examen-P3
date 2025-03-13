@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ec.edu.espe.producto.producto.controller.dto.ProductoDTO;
 import ec.edu.espe.producto.producto.model.Producto;
 import ec.edu.espe.producto.producto.service.ProductoService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -27,8 +28,8 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity <Producto> crearProducto (@RequestBody ){
-        return ResponseEntity.ok(productoService.crearProducto());
+    public ResponseEntity <Producto> crearProducto (@RequestBody ProductoDTO productoDTO){
+        return ResponseEntity.ok(productoService.crearProducto(productoDTO));
     }
 
 
